@@ -1,4 +1,4 @@
-MakeCacheMatrix <- function(x = matrix()){
+MakeCacheMatrix <- function(x = matrix()){## in this function we generate a special matrix that has a list of function, set-get-setInverse-getInverese .
         Inverse <- NULL
         set<- function(y){
                 x<<- y 
@@ -9,7 +9,7 @@ MakeCacheMatrix <- function(x = matrix()){
         getInverse<- function() Inverse
         list(set = set,get = get,setInverse = setInverse,getInverse=getInverse)        
 }
-cacheSolve<- function(x,...){
+cacheSolve<- function(x,...){## in this function we assey wether the matrix has a inverse or not. If it does not we add its invevrse to its list
         Inverse<- x$getInverse()
         if(!is.null(Inverse)){
                 message("getting cached data")
